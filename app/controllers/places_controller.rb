@@ -29,6 +29,13 @@ def update
 
 end
 
+def destroy
+    @place = Place.find(params[:id])
+  @place.destroy
+  redirect_to root_path
+
+  end
+
   private
 
   def place_params
