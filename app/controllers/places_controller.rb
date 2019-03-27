@@ -45,6 +45,11 @@ def update
   end
 end
 
+  def create
+    @place = Place.find(params[:id])
+    @comment = Photos.new
+  end
+
 def destroy
     @place = Place.find(params[:id])
     if @place.user != current_user
