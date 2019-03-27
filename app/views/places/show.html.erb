@@ -91,24 +91,22 @@
 <div class="clear"></div>
 <h1>Comments</h1>
 <div class="row">
-
+<% @place.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
     <blockquote>
-      <% if @comment.humanized_rating.present? %>
+      <% if comment.humanized_rating.present? %>
         <b><%= comment.humanized_rating %></b> -
       <% end %>
-      <%= @comment.message %>
-      <small><%= @comment.user.email %></small>
+      <%= comment.message %>
+      <small><%= comment.user.email %></small>
     </blockquote>
-  
-
-<%= simple_form_for @photo do |f| %>
-  <%= f.input :message %>
-  <%= f.input :photo %>
-  <%= f.submit "add a photo", class: 'btn btn-primary' %>
-  <end>
   </div>
-</div>
 <% end %>
-
+</div>
+<div class="clear"></div>
+<%= simple_form_for @comment, url: place_photos_path(@place) do |f| %>
+  <%= f.input :pictures %>
+  
+  <%= f.submit "add a photo", class: 'btn btn-primary' %>
+  <% end %>
 
