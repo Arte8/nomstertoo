@@ -47,7 +47,7 @@ end
 
   def create
     @place = Place.find(params[:id])
-    @comment = Photos.new
+    @photo = Photos.new
   end
 
 def destroy
