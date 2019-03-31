@@ -4,5 +4,7 @@ class Photo < ActiveRecord::Base
    belongs_to :place 
     t.text :caption
     t.integer :place_id
-  
+  end 
+end
+end 
 end
